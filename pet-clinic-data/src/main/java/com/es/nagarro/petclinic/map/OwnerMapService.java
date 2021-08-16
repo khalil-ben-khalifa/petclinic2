@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -22,6 +23,12 @@ public class OwnerMapService extends AbstarctMapService<Owner, Long> implements 
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
+        /*Owner testOwner = new Owner();
+        Set<Owner> owners = new HashSet<>();
+        testOwner.setFirstName("Khalil");
+        testOwner.setLastName("Ben Khalifa");
+        owners.add(testOwner);
+        return owners;*/
     }
 
     @Override
@@ -54,11 +61,11 @@ public class OwnerMapService extends AbstarctMapService<Owner, Long> implements 
                 });
 
             }
-
+            return super.save(object);
         }else{
             return null;
         }
-        return object;
+
     }
 
     @Override
