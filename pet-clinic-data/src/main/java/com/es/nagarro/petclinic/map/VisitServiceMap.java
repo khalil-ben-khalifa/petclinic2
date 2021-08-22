@@ -28,8 +28,12 @@ public class VisitServiceMap extends AbstarctMapService<Visit, Long> implements 
     }
 
     @Override
-    public Visit save(Visit object) {
-        return super.save(object);
+    public Visit save(Visit visit) {
+        if (visit.getPet() == null || visit.getPet().getId() == null || visit.getPet().getOwner() == null || visit.getPet().getOwner().getId() == null) {
+            throw new RuntimeException("Pet or Owner are required");
+        } else {
+            return super.save(visit);
+        }
     }
 
     @Override
