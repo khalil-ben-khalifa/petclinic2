@@ -1,5 +1,6 @@
 package com.es.nagarro.petclinic.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,8 @@ public class Owner extends Person{
     private String city;
     @Column(name = "telephon")
     private String telephon;
+
+    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     @Column(name = "pets")
     private Set<Pet> pets = new HashSet<>();

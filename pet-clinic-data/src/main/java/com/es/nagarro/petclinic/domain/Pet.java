@@ -1,5 +1,6 @@
 package com.es.nagarro.petclinic.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +15,12 @@ import java.util.Set;
 @Setter
 public class Pet extends BaseEntity{
 
-    @JoinColumn(name = "owner_id")
+    @Column(name= "pet_name")
+    private String name;
+
+    @JsonBackReference
     @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
     @Column(name = "bith_date")
