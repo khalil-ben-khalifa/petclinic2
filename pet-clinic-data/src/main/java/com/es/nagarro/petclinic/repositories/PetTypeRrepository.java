@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PetTypePrepository extends CrudRepository<PetType, Long> {
+public interface PetTypeRrepository extends CrudRepository<PetType, Long> {
 }

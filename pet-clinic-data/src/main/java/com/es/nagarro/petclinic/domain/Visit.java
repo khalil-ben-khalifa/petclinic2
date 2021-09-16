@@ -1,8 +1,7 @@
 package com.es.nagarro.petclinic.domain;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,6 +10,9 @@ import java.time.LocalDate;
 @Table(name = "visits")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Visit extends BaseEntity{
     @Column(name = "date")
     private LocalDate date;

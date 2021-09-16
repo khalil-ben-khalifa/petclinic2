@@ -1,8 +1,7 @@
 package com.es.nagarro.petclinic.domain;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -12,6 +11,9 @@ import java.util.Set;
 @Table(name = "owners")
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Owner extends Person{
 
     @Column(name = "adress")

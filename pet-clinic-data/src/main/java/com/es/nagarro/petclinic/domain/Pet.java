@@ -1,8 +1,7 @@
 package com.es.nagarro.petclinic.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,6 +12,9 @@ import java.util.Set;
 @Table(name = "pet")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Pet extends BaseEntity{
 
     @Column(name= "pet_name")

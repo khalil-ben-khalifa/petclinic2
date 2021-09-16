@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Service
 @AllArgsConstructor
-@Profile("springdata")
+@Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
     private OwnerRepository ownerRepository;
 
@@ -36,6 +36,9 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
+        System.out.println("########################");
+        System.out.println("########################");
+        System.out.println("########################");
         return ownerRepository.save(object);
     }
 

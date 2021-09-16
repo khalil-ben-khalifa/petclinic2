@@ -1,7 +1,6 @@
 package com.es.nagarro.petclinic.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,6 +10,8 @@ import java.util.Set;
 @Table(name = "vets")
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Vet extends Person{
 
     @ManyToMany(fetch = FetchType.EAGER)
